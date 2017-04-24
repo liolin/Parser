@@ -1,0 +1,7 @@
+* EBNF for the Parser
+
+<intger> := {"0"} | [<Sign>] , NaturalNumber
+<Sign> := "+" | "-"
+<NaturalNumber> := <NumberExpectZero>, {<Number>}
+<NumberExpectZero> := "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" 
+<Number> := "0" | <NumerExpectZero>
