@@ -1,5 +1,6 @@
 #include "Lexer.h"
 
+using namespace BasicParser;
 
 Lexer::Lexer(){}
 

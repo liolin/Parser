@@ -5,19 +5,22 @@
 #include <string>
 #include "Token.h"
 
-class Lexer
+namespace BasicParser
 {
-private:
-    std::vector<Token> token;
-    std::string input;
-    void tokenice(std::string input);
-    
-public:
-    Lexer();
-    Lexer(std::string input);
-    void SetInput(std::string input);
-    std::string GetInput();
-    std::vector<Token> GetTokens();
-};
 
+    class Lexer
+    {
+    private:
+	std::vector<Token> token;
+	std::string input;
+	void tokenice(std::string input);
+    
+    public:
+	Lexer();
+	Lexer(std::string input);
+	void SetInput(std::string input);
+	std::string GetInput();
+	std::vector<Token> GetTokens();
+    };
+}
 #endif /* LEXER_H */

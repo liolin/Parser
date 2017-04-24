@@ -3,6 +3,8 @@
 #include <string>
 #include "Parser.h"
 
+using namespace BasicParser;
+
 int main()
 {
     std::string in = "";

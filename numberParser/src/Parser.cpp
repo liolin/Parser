@@ -1,5 +1,7 @@
 #include "Parser.h"
 
+using namespace BasicParser;
+
 Parser::Parser()
 {
     this->input = "";
