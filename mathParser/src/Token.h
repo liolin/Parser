@@ -17,16 +17,13 @@ namespace BasicParser
 
     class Token
     {
-    private:
+    protected:
 	TokenType type;
-	int value;
 
     public:
-	Token(TokenType type, int value);
+	Token(TokenType type);
 	void SetType(TokenType type);
 	TokenType GetType();
-	void SetValue(int value);
-	int GetValue();
     };
 }
 #endif /* TOKEN_H */
