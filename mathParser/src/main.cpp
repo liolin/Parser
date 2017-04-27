@@ -10,7 +10,10 @@ int main()
 {
     string in;
     cin >> in;
-    Lexer a(in);
 
+    Parser a(in);
+
+    cout << a.parse() << '\n';
+    
     return 0;
 }

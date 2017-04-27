@@ -17,10 +17,14 @@ namespace BasicParser
 	void getNextToken();
 	
 	/* regeln */
-
+	int start();
+	int multiplikation();
+	int paren();
+	int number();
 	
     public:
-	void parse(std::string);
+	Parser(std::string);
+	int parse();
     };
 }
 

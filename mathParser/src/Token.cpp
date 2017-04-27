@@ -2,6 +2,10 @@
 
 using namespace BasicParser;
 
+Token::Token()
+{
+}
+
 Token::Token(TokenType type)
 {
     this->SetType(type);

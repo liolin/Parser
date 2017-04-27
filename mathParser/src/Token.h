@@ -32,6 +32,7 @@ namespace BasicParser
 	int value;
 	
     public:
+	Token();
 	Token(TokenType type);
 	Token(TokenType type, int value);
 	void SetType(TokenType type);
