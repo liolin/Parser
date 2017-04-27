@@ -19,7 +19,9 @@ namespace BasicParser
 	T_MIN    = 21,
 	T_MUL    = 22,
 	T_DIV    = 23,
-	T_EQUAL  = 24
+	T_EQUAL  = 24,
+	T_LPAREN = 25,
+	T_RPAREN = 26
     };
 
 
