@@ -27,7 +27,7 @@ Token Lexer::getNextToken(bool peek)
 }
 
 /**
-   @brief Reads next token from input string
+   @brief Reads the next token from input string
 */
 Token Lexer::readNextToken()
 {
@@ -48,13 +48,13 @@ Token Lexer::readNextToken()
     case '/':
 	this->readNextChar();
 	return Token(T_DIV);
-    // case '(':
-    // 	this->readNextChar();
-    // 	return Token(TT_LPAREN);
-    // case ')':
-    // 	this->readNextChar();
-    // 		return Token(TT_RPAREN);
-
+    case '(':
+    	this->readNextChar();
+    	return Token(T_LPAREN);
+    case ')':
+    	this->readNextChar();
+	return Token(T_RPAREN);
+ 
     case '0': case '1': case '2': case '3': case '4':
     case '5': case '6': case '7': case '8': case '9':
 	while (isdigit(this->ch))
@@ -70,8 +70,8 @@ Token Lexer::readNextToken()
 	    //std::wcerr << "Error: nicht unterstuetzes Zeichen: '" << this->_ch << "'" << std::endl;
 	    break;
     }
-    
-    // Keine tokens mehr gefunden
+
+    // End of input
     return Token(T_END);
 }
 
@@ -105,6 +105,7 @@ void Lexer::skipSpace()
 */
 void Lexer::iniTokeVec()
 {
+    this->tokens.push_back(T_BEGIN);
     Token tok = this->readNextToken();
 
     while(tok.GetType() != T_END)
@@ -112,4 +113,5 @@ void Lexer::iniTokeVec()
 	this->tokens.push_back(tok);
 	tok = this->readNextToken();
     }
+    this->tokens.push_back(T_END);
 }
