@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+
 #include "Token.h"
 
 namespace BasicParser
@@ -10,15 +11,19 @@ namespace BasicParser
     class Lexer
     {
     private:
-	int pos;
+	std::string input;
+	unsigned int curPos;
+	unsigned int curPosVec;
+	char ch;
 	std::vector<Token> tokens;
 
-	bool isNumeric(char c);
+	void iniTokeVec();
+	Token readNextToken();
+	void skipSpace();
+	void readNextChar();
 	
     public:
-	Lexer();
-	void tokenice(std::string input);
-	std::vector<Token> getAllTokens();
+	Lexer(std::string input);
 	Token getNextToken(bool peek = false);
     };
 }
