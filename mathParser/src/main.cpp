@@ -1,14 +1,16 @@
 #include <iostream>
+#include <string>
 
-#include "Token.h"
-#include "TokenNumber.h"
+#include "Parser.h"
 
 using namespace BasicParser;
 using namespace std;
 
 int main()
 {
-    TokenNumber tok(T_NUMBER, 2);
-    cout << "Token number: " << tok.GetNumber() << '\n';
+    string in;
+    cin >> in;
+    Lexer a(in);
+
     return 0;
 }
