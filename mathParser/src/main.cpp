@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     string in;
-    cin >> in;
+    std::getline(std::cin, in);    
 
     Parser a(in);
 
